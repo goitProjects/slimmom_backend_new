@@ -14,7 +14,7 @@ import {
 const addProductSchema = Joi.object({
   date: Joi.string()
     .custom((value, helpers) => {
-      const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
+      const dateRegex = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
       const isValidDate = dateRegex.test(value);
       if (!isValidDate) {
         return helpers.message({
@@ -56,7 +56,7 @@ const deleteProductSchema = Joi.object({
 const getDayInfoScheme = Joi.object({
   date: Joi.string()
     .custom((value, helpers) => {
-      const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
+      const dateRegex = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
       const isValidDate = dateRegex.test(value);
       if (!isValidDate) {
         return helpers.message({
