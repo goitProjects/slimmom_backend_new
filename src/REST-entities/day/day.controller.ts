@@ -139,6 +139,13 @@ export const deleteProduct = async (req: Request, res: Response) => {
   (daySummary as IDaySummary).percentsOfDailyRate =
     ((daySummary as IDaySummary).kcalConsumed * 100) /
     (req.user as IMom).userData.dailyRate;
+  if (
+    (daySummary as IDaySummary).kcalLeft > (req.user as IMom).userData.dailyRate
+  ) {
+    (daySummary as IDaySummary).kcalLeft = (
+      req.user as IMom
+    ).userData.dailyRate;
+  }
   await (daySummary as IDaySummary).save();
   return res.status(201).send({
     newDaySummary: {
