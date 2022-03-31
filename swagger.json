@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "version": "2.0.1",
+    "version": "2.0.0",
     "title": "Slimmom API docs",
     "description": "API documentation for GoIT project 'Slimmom'. [Backend github repository](https://github.com/DanTsvirkun/slimmom-backend)",
     "license": {
@@ -9,10 +9,7 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "servers": [
-    { "url": "https://slimmom-backend.goit.global" },
-    { "url": "https://slimmom-backend.herokuapp.com" }
-  ],
+  "servers": [{ "url": "https://slimmom-backend.herokuapp.com" }],
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "tags": [
@@ -276,7 +273,7 @@
           {
             "name": "search",
             "in": "query",
-            "description": "Name of the product (in russian) you want to find",
+            "description": "Name of the product (in russian) you want to find. Min length - 1, max length - 30",
             "required": true
           }
         ],
@@ -475,17 +472,23 @@
           "email": {
             "type": "string",
             "description": "User's email",
-            "format": "email"
+            "format": "email",
+            "minLength": 3,
+            "maxLength": 254
           },
           "password": {
             "type": "string",
             "description": "User's password",
-            "example": "qwerty123"
+            "example": "qwerty123",
+            "minLength": 8,
+            "maxLength": 100
           },
           "username": {
             "type": "string",
             "description": "User's name",
-            "example": "Emma"
+            "example": "Emma",
+            "minLength": 3,
+            "maxLength": 254
           }
         }
       },
@@ -516,12 +519,16 @@
           "email": {
             "type": "string",
             "description": "User's email",
-            "format": "email"
+            "format": "email",
+            "minLength": 3,
+            "maxLength": 254
           },
           "password": {
             "type": "string",
             "description": "User's password",
-            "example": "qwerty123"
+            "example": "qwerty123",
+            "minLength": 8,
+            "maxLength": 100
           }
         }
       },
@@ -894,7 +901,9 @@
           "weight": {
             "type": "number",
             "description": "Product's weight",
-            "example": 100
+            "example": 100,
+            "minimum": 1,
+            "maximum": 3000
           }
         }
       },

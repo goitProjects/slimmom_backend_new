@@ -7,7 +7,7 @@ import { checkDailyRate } from "../REST-entities/day/day.controller";
 import { findProducts } from "./product-search.controller";
 
 const searchQuerySchema = Joi.object({
-  search: Joi.string().required(),
+  search: Joi.string().min(1).max(30).required(),
 });
 
 const router = Router();
