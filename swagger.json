@@ -9,7 +9,7 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "servers": [{ "url": "https://slimmom-backend.herokuapp.com" }],
+  "servers": [{ "url": "https://slimmom-backend.goit.global" }],
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "tags": [
