@@ -36,7 +36,7 @@ export const countDailyRate = async (req: Request, res: Response) => {
       break;
   }
   const notAllowedProducts = [
-    ...new Set(notAllowedProductsObj.map((product) => product.title.ru)),
+    ...new Set(notAllowedProductsObj.map((product) => product.title.ua)),
   ];
   if (userId) {
     const user = await UserModel.findById(userId);
