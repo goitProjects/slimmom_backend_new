@@ -273,7 +273,7 @@
           {
             "name": "search",
             "in": "query",
-            "description": "Name of the product (in russian) you want to find. Min length - 1, max length - 30",
+            "description": "Name of the product (in ukrainian) you want to find. Min length - 1, max length - 30",
             "required": true
           }
         ],
