@@ -7,7 +7,7 @@ export const findProducts = async (req: Request, res: Response) => {
   const lang = !!req.query?.lang ? req.query.lang : "ua";
   const title = "title."+lang;
   const foundProducts = await ProductModel.find({
-  [title]: { $regex: search, $options: "i" },
+  title.ua: { $regex: search, $options: "i" },
   }).lean();
   const filteredProducts = foundProducts.filter(
     // @ts-ignore
