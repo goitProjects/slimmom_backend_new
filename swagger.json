@@ -750,7 +750,7 @@
             "items": {
               "type": "string",
               "description": "Not allowed product",
-              "example": ["Яйцо куриное (желток сухой)"]
+              "example": ["Яйце курине (жовток сухий)"]
             }
           }
         }
@@ -822,7 +822,7 @@
             "items": {
               "type": "string",
               "description": "Not allowed product",
-              "example": ["Яйцо куриное (желток сухой)"]
+              "example": ["Яйце курине (жовток сухий)"]
             }
           }
         }
@@ -837,14 +837,6 @@
               "description": "Product's id",
               "example": "507f1f77bcf86cd799439011"
             },
-            "categories": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "description": "Product's category",
-                "example": "яйца"
-              }
-            },
             "weight": {
               "type": "number",
               "description": "Product's weight (100g)",
@@ -854,10 +846,6 @@
               "type": "object",
               "description": "Product's russian and ukrainian titles",
               "properties": {
-                "ru": {
-                  "type": "string",
-                  "example": "Меланж яичный"
-                },
                 "ua": {
                   "type": "string",
                   "example": "Меланж яєчний"
@@ -916,7 +904,7 @@
               "title": {
                 "type": "string",
                 "description": "Eaten product's description",
-                "example": "Меланж яичный"
+                "example": "Меланж яєчний"
               },
               "weight": {
                 "type": "number",
@@ -952,7 +940,7 @@
                     "title": {
                       "type": "string",
                       "description": "Eaten product's description",
-                      "example": "Меланж яичный"
+                      "example": "Меланж яєчний"
                     },
                     "weight": {
                       "type": "number",
@@ -1112,7 +1100,7 @@
                 "title": {
                   "type": "string",
                   "description": "Eaten product's description",
-                  "example": "Меланж яичный"
+                  "example": "Меланж яєчний"
                 },
                 "weight": {
                   "type": "number",
@@ -1272,7 +1260,7 @@
                       "title": {
                         "type": "string",
                         "description": "Eaten product's description",
-                        "example": "Меланж яичный"
+                        "example": "Меланж яєчний"
                       },
                       "weight": {
                         "type": "number",
