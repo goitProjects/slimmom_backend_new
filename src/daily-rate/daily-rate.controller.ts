@@ -15,22 +15,22 @@ export const countDailyRate = async (req: Request, res: Response) => {
     case 1:
       notAllowedProductsObj = await ProductModel.find({
         "groupBloodNotAllowed.1": true,
-      }).lean();
+      }, {"title.ru": 0} ).lean();
       break;
     case 2:
       notAllowedProductsObj = await ProductModel.find({
         "groupBloodNotAllowed.2": true,
-      }).lean();
+      }, {"title.ru": 0}).lean();
       break;
     case 3:
       notAllowedProductsObj = await ProductModel.find({
         "groupBloodNotAllowed.3": true,
-      }).lean();
+      }, {"title.ru": 0}).lean();
       break;
     case 4:
       notAllowedProductsObj = await ProductModel.find({
         "groupBloodNotAllowed.4": true,
-      }).lean();
+      }, {"title.ru": 0}).lean();
       break;
     default:
       break;
