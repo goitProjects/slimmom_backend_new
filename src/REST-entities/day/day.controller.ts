@@ -35,7 +35,7 @@ export const addProduct = async (
       const kcalCoefficient = product.calories / product.weight;
       const kcalConsumed = kcalCoefficient * weight;
       const eatenProduct = {
-        title: product.title.ru,
+        title: product.title.ua,
         weight,
         kcal: kcalConsumed,
         id: uuid(),
