@@ -4,7 +4,7 @@ import { IMom, IProduct } from "../helpers/typescript-helpers/interfaces";
 
 export const findProducts = async (req: Request, res: Response) => {
   const search = req.query.search;
-  const lang = !!req.query?.lang ? req.query.lang : "ua";
+  const lang = !!req.query?.lang ? req.query.lang : "en";
   const title = "title."+lang;
   const foundProducts = await ProductModel.find({
   [title]: { $regex: search, $options: "i" },

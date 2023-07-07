@@ -844,7 +844,7 @@
             },
             "title": {
               "type": "object",
-              "description": "Product's russian and ukrainian titles",
+              "description": "Product's titles",
               "properties": {
                 "ua": {
                   "type": "string",
