@@ -5,18 +5,13 @@ node("nodejs"){
         withCredentials([
             string(credentialsId: 'goit_jenkins_build_bot_api_key', variable: 'telegramNotifyChannelBotApiToken'),
             string(credentialsId: 'goit_jenkins_build_chat_id', variable: 'telegramNotifyChannelChatId'),
-                
-            string(credentialsId: 'tech_alert_bot_api_key', variable: 'telegramAlertChannelBotApiToken'),
-            string(credentialsId: 'tech_alert_chat_id', variable: 'telegramAlertChannelChatId'),
 
             //add ssh credential for student-backend server
             string(credentialsId: 'ssh_user_host_for_stud-backend_server', variable: 'sshUserAndHost')
         ]) {
                 env.telegramNotifyChannelBotApiToken = telegramNotifyChannelBotApiToken;
                 env.telegramNotifyChannelChatId = telegramNotifyChannelChatId;
-                env.telegramAlertChannelBotApiToken = telegramAlertChannelBotApiToken;
-                env.telegramAlertChannelChatId = telegramAlertChannelChatId;
-            
+                
                 env.sshUserAndHost = sshUserAndHost;
         }
     }
@@ -41,7 +36,7 @@ node("nodejs"){
     
     stage('Clone Git Repo') {
         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-            git branch: 'main', credentialsId: 'github-goitProjects', url: 'git@github.com:goitProjects/slimmom_backend_new.git'
+            git branch: 'main', credentialsId: 'pasha-goitacad-ssh', url: 'git@github.com:goitProjects/slimmom_backend_new.git'
         }
     }
     
@@ -109,13 +104,5 @@ node("nodejs"){
             message
         )
         
-        //Send message to alert channel only if failed or restore build success
-        if (!success || (success && !previousBuildSuccess)) {
-             sendTelegramChannelMessage(
-                env.telegramAlertChannelBotApiToken,
-                env.telegramAlertChannelChatId,
-                message
-            )
-        }
     }
 }
